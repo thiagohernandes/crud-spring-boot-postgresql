@@ -1,0 +1,12 @@
+*.class
+*.jar
+*.war
+.apt_generated/
+.settings/
+src/
+target/
+*.project
+*.classpath
+*.factorypath
+.classpath
+.factorypath
