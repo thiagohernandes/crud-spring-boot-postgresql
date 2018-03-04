@@ -1,5 +1,6 @@
 package com.br.controller;
 
+import java.sql.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +38,8 @@ public class FuncionarioController {
 	@ResponseBody
 	@PostMapping("/novo")
 	public Funcionario novo(@RequestBody Funcionario funcionario) {
+		long hours24 = 24L * 60L * 60L * 1000L;
+		funcionario.setNascimento(new Date(funcionario.getNascimento().getTime() + hours24));
 	return repository.save(funcionario);
 	}
 	
