@@ -1,6 +1,9 @@
 package com.br.repository;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.br.domain.Funcionario;
@@ -14,4 +17,7 @@ import com.br.domain.Funcionario;
 @Repository
 public interface FuncionarioRepository extends JpaRepository<Funcionario, Integer> {
 
+	@Query(value=   "select f FROM Funcionario f")
+	public List<Funcionario> findWithNativeQuery();
+	
 }

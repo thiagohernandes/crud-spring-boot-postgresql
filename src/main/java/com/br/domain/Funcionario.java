@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -22,22 +24,25 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 @Entity
 @Table(schema="public", name="funcionario")
 @JsonInclude(Include.ALWAYS)
+@SequenceGenerator(name="seq-gen", allocationSize=1)
 public class Funcionario {
 
 	private Integer id;
 	private String nome;
 	private Date nascimento;
 	private BigDecimal salario;
+	private Departamento departamento;
 	
 	public Funcionario() {
 		
 	}
 	
-	public Funcionario(Integer id, String nome, Date nascimento, BigDecimal salario) {
+	public Funcionario(Integer id, String nome, Date nascimento, BigDecimal salario, Departamento departamento) {
 		this.id = id;
 		this.nome = nome;
 		this.nascimento = nascimento;
 		this.salario = salario;
+		this.departamento = departamento;
 	}
 
 	@Id
@@ -74,5 +79,14 @@ public class Funcionario {
 	public void setSalario(BigDecimal salario) {
 		this.salario = salario;
 	}
-	
+	@ManyToOne
+	@JoinColumn(name="id_departamento", referencedColumnName="id")
+	public Departamento getDepartamento() {
+		return departamento;
+	}
+
+	public void setDepartamento(Departamento departamento) {
+		this.departamento = departamento;
+	}
+
 }
