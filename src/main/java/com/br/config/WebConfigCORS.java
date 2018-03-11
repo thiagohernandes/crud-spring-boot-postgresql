@@ -16,11 +16,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 public class WebConfigCORS extends WebMvcConfigurerAdapter {
 	@Override
 	public void addCorsMappings(CorsRegistry registry) {
-	/*registry.addMapping("/api/**")
-	.allowedOrigins("http://localhost:4200").allowedOrigins("http://localhost:8080")
+	registry.addMapping("/api/**")
+	.allowedOrigins("http://localhost:4200")
 	.allowedMethods("*")
 	.allowedHeaders("*")
 	.allowCredentials(false)
-	.maxAge(3600);*/
+	.maxAge(3600);
 	}
 }

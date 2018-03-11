@@ -51,6 +51,8 @@ public class FuncionarioController {
 	@ResponseBody
 	@PutMapping(value="/alterar/{id}")
 	public Funcionario alterarFuncionario(@PathVariable("id") Integer id, @RequestBody Funcionario funcionario ) {
+		long hours24 = 24L * 60L * 60L * 1000L;
+		funcionario.setNascimento(new Date(funcionario.getNascimento().getTime() + hours24));
 		return repository.save(funcionario);
 	}
 	

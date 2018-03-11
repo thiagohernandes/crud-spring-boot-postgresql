@@ -58,7 +58,7 @@ public class Departamento {
 		this.nome = nome;
 	}
 
-	@OneToMany(mappedBy="departamento",fetch=FetchType.LAZY)
+/*	@OneToMany(mappedBy="departamento",fetch=FetchType.LAZY)
 	public List<Funcionario> getFuncionariosDepto() {
 		return funcionariosDepto;
 	}
@@ -66,5 +66,5 @@ public class Departamento {
 	public void setFuncionariosDepto(List<Funcionario> funcionariosDepto) {
 		this.funcionariosDepto = funcionariosDepto;
 	}
-
+*/
 }
