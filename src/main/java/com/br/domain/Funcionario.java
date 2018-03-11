@@ -31,18 +31,17 @@ public class Funcionario {
 	private String nome;
 	private Date nascimento;
 	private BigDecimal salario;
-	private Departamento departamento;
+	//private Departamento departamento;
 	
 	public Funcionario() {
 		
 	}
 	
-	public Funcionario(Integer id, String nome, Date nascimento, BigDecimal salario, Departamento departamento) {
+	public Funcionario(Integer id, String nome, Date nascimento, BigDecimal salario) {
 		this.id = id;
 		this.nome = nome;
 		this.nascimento = nascimento;
 		this.salario = salario;
-		this.departamento = departamento;
 	}
 
 	@Id
@@ -79,7 +78,7 @@ public class Funcionario {
 	public void setSalario(BigDecimal salario) {
 		this.salario = salario;
 	}
-	@ManyToOne
+	/*@ManyToOne
 	@JoinColumn(name="id_departamento", referencedColumnName="id")
 	public Departamento getDepartamento() {
 		return departamento;
@@ -87,6 +86,6 @@ public class Funcionario {
 
 	public void setDepartamento(Departamento departamento) {
 		this.departamento = departamento;
-	}
+	}*/
 
 }
